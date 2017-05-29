@@ -1,0 +1,29 @@
+CREATE:
+Command:
+curl -X POST -H "Content-Type: application/json" --data "{\"key\":\"key1\", \"value\":\"hello world\"}" localhost:3000/pinterest
+Output:
+{"key":"key1","value":"hello world","_id":"5929b84b9717df09d9622e7a"}
+
+READ:
+Command:
+curl -X GET localhost:3000/pinterest/hello
+Output:
+{"value":"world3 "}
+
+READ ALL:
+Command:
+curl -X GET localhost:3000/pinterest/
+Output:
+["KEY","hello","key1"]
+
+UPDATE:
+Command:
+curl -X PUT -H "Content-Type: application/json" --data "{\"key\":\"hello\", \"value\":\"EVERYONE \"}" localhost:3000/pinterest/hello
+Output:
+{"key":"hello"}
+
+DELETE:
+Command:
+curl -X DELETE localhost:3000/pinterest/hello
+Output:
+"hello"
